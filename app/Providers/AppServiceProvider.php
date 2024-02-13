@@ -24,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Post::observe(PostObserver::class);
         Paginator::useBootstrap();
+        //test
     }
 }
