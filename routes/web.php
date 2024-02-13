@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\UserRegisterd;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Jobs\SendMail;
@@ -44,3 +45,9 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('send-mail',function(){
 dd("SendMail");
 });
+Route::get('user-register',function(){
+    $email='RouteGET@example.com';
+    event(new UserRegisterd($email));
+    dd('message send');
+
+}); 
